@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import { getApiHealth } from './controllers/health.js';
 import{postApiTransaction ,getApiTransaction ,getApiTransactionById} from "./controllers/transaction.js";
-
+import{postApiSingup} from "./controllers/user.js";
 const app = express();
 app.use(express.json());
 
@@ -23,6 +23,8 @@ app.post('/api/v1/transactions',postApiTransaction );
 app.get('/api/v1/transactions',getApiTransaction);
 
 app.get('/api/v1/transactions/:id',getApiTransactionById);
+
+app.post('/api/v1/singups',postApiSingup);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
