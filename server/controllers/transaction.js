@@ -47,4 +47,16 @@ async (req, res) => {
     
     }
 
- export {postApiTransaction ,getApiTransaction };
+    const getApiTransactionById = async (req , res) => {
+      const {id} = req.params;
+
+      const showTransaction =await Transaction.findOne({_id:id})
+      res.json({
+         success:true,
+         data:showTransaction,
+         message:"Successfully fetch data by"
+      })
+
+    }
+
+ export {postApiTransaction ,getApiTransaction ,getApiTransactionById };
