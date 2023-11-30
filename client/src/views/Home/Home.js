@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
 import axios from 'axios';
+import Navbar from '../../components/Navbar/Navbar';
 
 function Home(){
     const [transactions,settransactions] = useState();
@@ -18,6 +19,7 @@ function Home(){
     },[])
     return(
         <>
+        <Navbar/>
     <h1 className='heading'> All Expences</h1>
     {
         transactions?.map((transaction,index) => {
