@@ -1,7 +1,8 @@
-import react from "react";
+import react, { useEffect } from "react";
 import React, { useState } from "react";
 import './Singup.css';
 import Navbar from "../Navbar/Navbar";
+import axios from 'axios';
 function Singup() {
 
     const [name, setName] = useState(" ");
@@ -9,6 +10,45 @@ function Singup() {
     const [password, setPassword] = useState(" ");
     const [gender, setgender] = useState("female");
     const [mobile, setMobile] = useState(" ");
+
+const singup =async()=>{
+    if(!name){
+        alert("Name is required");
+        return;
+    }
+    if(!email){
+        alert("Email is required");
+        return;
+    }
+    if(!password){
+        alert("Password is required");
+        return;
+    }
+    if(!gender){
+        alert("Gender is required");
+        return;
+    }
+    if(!mobile){
+        alert("Mobile is required");
+        return;
+    }
+        const response =await axios.post("/api/v1/singups",{
+            name:name,
+            email:email,
+            password:password,
+            gender:gender,
+            mobile:mobile
+        })
+
+        alert (response?.data?.message);
+        if(response?.data?.success){
+            window.location.href='/login';
+        }
+
+
+
+};
+
     return (
         <>
             <Navbar />
@@ -95,7 +135,7 @@ function Singup() {
                         <label htmlFor="female" className="gender">Female</label>
                     </div>
                     <div>
-                        <button type="button" className="btn-singup">
+                        <button type="button" className="btn-singup" onClick={singup}>
                          Singup</button>
                     </div>
                 </form>
