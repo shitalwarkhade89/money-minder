@@ -54,7 +54,7 @@ const singup =async()=>{
             <Navbar />
             <div>
                 <form className="singup-form">
-                    <h1 className="singup-heading">Singup</h1>
+                    <h1 className="text-center">Singup</h1>
                     <div>
 
 
