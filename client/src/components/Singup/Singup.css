@@ -1,0 +1,48 @@
+
+
+.singup-form{
+    width: fit-content;
+    background-color: white;
+   margin: 40px auto;
+   padding:  20px 50px;
+   border-radius: 10px;
+   box-shadow: 0 0 10px 0 rgb(84, 83, 83) ;
+}
+.singup-heading{
+    text-align: center;
+    font-size: 35px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.label{
+    font-size: 20px;
+}
+.input-box{
+    display: block;
+    font-size: 18px;
+    padding: 5px 10px;
+    width: 270px;
+    margin-bottom:13px;
+}
+.gender-container{
+    margin-top:20px;
+    text-align: center;
+}
+.gender{
+    font-size: 20px;
+    margin-right: 10px;
+}
+.btn-singup{
+   width:150px;
+   background-color: black;
+   color: white;
+   font-size: 25px;
+   border: none;
+   text-align: center;
+   padding: 4px 10px;
+   border-radius: 14px;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   display: block;
+   margin: 20px auto;
+   cursor: pointer;
+}

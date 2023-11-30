@@ -8,7 +8,7 @@ function Navbar() {
                 <h2>Mony-Minder 💰</h2>
                 <div>
                     <Link to="/login" className="navbar-links">Login</Link>
-                    <Link to="/signup" className="navbar-links">Signup</Link>
+                    <Link to="/singup" className="navbar-links">Singup</Link>
                 </div>
                 <div>
                     Hello,User

@@ -1,9 +1,15 @@
 import React from "react";
 import './Login.css';
+import Navbar from "../Navbar/Navbar";
 function Login(){
     return(
         <>
-        <h1>Login</h1></>
+        <Navbar/>
+        <div>
+        <h1>Login</h1>
+        </div>
+        </>
+       
     )
 }
 
