@@ -26,4 +26,40 @@ const postApiSingup = async (req,res) => {
     }
     
 }
-export {postApiSingup};
+
+const postApiLogin = async (req,res) => {
+    const{email,password} =req.body;
+
+    try{
+        if(!email || !password) {
+            return res.json({
+                success:false,
+                messgage:"Plese enter valid email or paddword !"
+            })
+        }
+        const findUser = await User.findOne({
+            email:email,
+            password:password
+        }).select('name email mobile gender')
+        if(!findUser){
+            res.json({
+               success:false,
+               message:'User not found'
+             })
+        }
+        res.json({
+            success:true,
+            data:findUser,
+            message:'Successfully login user'
+        })
+    }
+    catch(err){
+        res.json({
+            success:false,
+            message:err.message
+        })
+    }
+    
+   
+}
+export {postApiSingup ,postApiLogin };
