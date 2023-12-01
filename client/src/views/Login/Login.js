@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './Login.css';
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import axios from "axios";
 function Login() {
     const [email, setEmail] = useState(" ");
     const [password, setPassword] = useState(" ");
+    
 
     const login = async () => {
 
@@ -14,10 +15,18 @@ function Login() {
         })
         alert(response?.data?.message );
         if(response?.data?.success){
-            localStorage.setItem("user", JSON.stringify(response?.data?.data));
+            localStorage.setItem("user" || '{}', JSON.stringify(response?.data?.data));
             window.location.hrf ='/';
         }
     }
+    useEffect (() =>{
+        const userId = JSON.parse(localStorage.getItem('user' || '{}'))
+        if(userId?.email){
+            alert("you are alrady loged in !");
+            window.location.href ='/'
+        }
+
+    },[])
     return (
         <>
             <Navbar />

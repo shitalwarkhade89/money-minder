@@ -1,7 +1,6 @@
-import react, { useEffect } from "react";
-import React, { useState } from "react";
+import React, { useState ,useEffect } from "react";
 import './Singup.css';
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import axios from 'axios';
 function Singup() {
 
@@ -48,6 +47,13 @@ const singup =async()=>{
 
 
 };
+    useEffect (() =>{
+    const userId = JSON.parse(localStorage.getItem('user' || '{}'))
+    if(userId?.email){
+        alert("you are alrady singup !");
+        window.location.href ='/'
+    }
+},[])
 
     return (
         <>
