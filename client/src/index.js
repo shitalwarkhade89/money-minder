@@ -24,7 +24,7 @@ const router =createBrowserRouter([
     element:<AddTransaction/>
 },
 {
-    path:'/singup',
+    path:'/signup',
     element:<Singup/>
 
 },

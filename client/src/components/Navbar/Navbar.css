@@ -12,3 +12,13 @@
     font-size: 25px;
     margin-left: 30px;
 }
+.logout-btn{
+    font-size: 20px;
+    cursor: pointer;
+    background-color:rgb(215, 224, 250);
+    padding:5px 10px;
+
+}
+.loged-user-name{
+    font-size: 20px;
+}

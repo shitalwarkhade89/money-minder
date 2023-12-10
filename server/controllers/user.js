@@ -31,12 +31,12 @@ const postApiLogin = async (req,res) => {
 
     const{email,password} =req.body;
 
-
+    try{
         if(! email || ! password) {
 
             return res.json({
                 success:false,
-                message:"Please enter valid email or paddword !"
+                message:"Please enter valid email or password !"
             })
         }
 
@@ -45,6 +45,8 @@ const postApiLogin = async (req,res) => {
             email:email,
             password:password
         }).select('email name')
+
+      
 
         if(findUser){
             return res.json({
@@ -59,7 +61,13 @@ const postApiLogin = async (req,res) => {
             })
         }
 
-      
+    }
+    catch(err){
+       res.json({
+        success:false,
+        message:err.message
+       })
+    }
     
    
 }

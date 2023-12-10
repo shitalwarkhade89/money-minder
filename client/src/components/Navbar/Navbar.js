@@ -20,15 +20,23 @@ function Navbar() {
                     <Link to="/mytransactions" className="navbar-links">My Transactions</Link>
                     <Link to="/addtransactions" className="navbar-links">Add Transactions</Link>
                     <Link to="/login" className="navbar-links">Login</Link>
-                    <Link to="/singup" className="navbar-links">Singup</Link>
+                    <Link to="/signup" className="navbar-links">Signup</Link>
                    
                 </div>
                 
-                <div>
+                <div className='loged-user-name'>
                 Hello,{user?.name  || "User"}
-
-                
                 </div>
+                {
+                   user?.name? (<span className="logout-btn" onClick={() => {
+                    localStorage.removeItem("user");
+                    window.location.href ="/login" ;
+                 }} >
+                     Logout
+                     </span>)
+                     :
+                     null
+                }
             </div>
         </>
     )

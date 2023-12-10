@@ -2,6 +2,8 @@ import React, { useState ,useEffect } from "react";
 import './Singup.css';
 import Navbar from "../../components/Navbar/Navbar";
 import axios from 'axios';
+import { Link } from "react-router-dom";
+import showToast from 'crunchy-toast';
 function Singup() {
 
     const [name, setName] = useState(" ");
@@ -39,19 +41,21 @@ const singup =async()=>{
             mobile:mobile
         })
 
-        alert (response?.data?.message);
+        // alert (response?.data?.message);
+    
         if(response?.data?.success){
+            showToast(response?.data?.message ,'success', 3000);
             window.location.href='/login';
+        }else{
+            showToast(response?.data?.message ,'danger', 3000);
         }
-
-
-
 };
+
     useEffect (() =>{
-    const userId = JSON.parse(localStorage.getItem('user' || '{}'))
+    const userId = JSON.parse(localStorage.getItem('user') || '{}');
     if(userId?.email){
-        alert("you are alrady singup !");
-        window.location.href ='/'
+        showToast("you are alrady singup !" ,'success', 3000);
+        window.location.href ='/login';
     }
 },[])
 
@@ -60,7 +64,7 @@ const singup =async()=>{
             <Navbar />
             <div>
                 <form className="singup-form">
-                    <h1 className="text-center">Singup</h1>
+                    <h1 className="text-center">Money Minder</h1>
                     <div>
 
 
@@ -144,6 +148,7 @@ const singup =async()=>{
                         <button type="button" className="btn-singup" onClick={singup}>
                          Singup</button>
                     </div>
+                    <Link to='/login'>Already have a account</Link>
                 </form>
 
             </div>
