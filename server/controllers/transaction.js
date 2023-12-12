@@ -1,7 +1,7 @@
 import Transaction from "../models/Transaction.js";
 import { responder } from "../util.js";
 
-
+// post transactions
 const postApiTransaction =
    async (req, res) => {
 
@@ -34,6 +34,7 @@ const postApiTransaction =
       }
    }
 
+// get transactions
 const getApiTransaction =
    async (req, res) => {
       const allTransactions = await Transaction.find();
@@ -46,7 +47,7 @@ const getApiTransaction =
       });
 
    }
-
+// get transaction by id
 const getApiTransactionById = async (req, res) => {
    const { id } = req.params;
 
@@ -72,18 +73,43 @@ const getTransactionByUserId = async (req, res) => {
       })
 
       res.json({
-         success:true,
-         data:findUserTransaction,
-         message:"fetach user transaction successfully"
+         success: true,
+         data: findUserTransaction,
+         message: "fetach user transaction successfully"
       })
 
    }
-   catch(err) {
+   catch (err) {
       res.json({
-         success:false,
-         message:err.message
+         success: false,
+         message: err.message
       })
    }
-    }
+}
 
-export { postApiTransaction, getApiTransaction, getApiTransactionById ,getTransactionByUserId};
+//  put/ update  transactionsby id
+
+const updateTransactionById = async (req, res) => {
+   const { id } = req.params;
+   const { amount, type, description, category } = req.body;
+
+   await Transaction.updateOne({ _id: id }, {
+      $set: {
+         amount: amount,
+         type: type,
+         description: description,
+         category: category,
+      }
+   });
+
+   const updateTransaction = await Transaction.findOne({ _id: id });
+
+   res.json({
+      success: true,
+      data: updateTransaction,
+      message: "Transaction update successfully"
+   })
+}
+
+
+export { postApiTransaction, getApiTransaction, getApiTransactionById, getTransactionByUserId , updateTransactionById };
