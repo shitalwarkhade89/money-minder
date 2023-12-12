@@ -24,16 +24,13 @@ function AddTransaction() {
             category: category
         })
 
-        showToast(response?.data?.message,'success',3000);
+        // showToast(response?.data?.message,'success',3000);
+        alert(response?.data?.message);
 
         if (response?.data?.success) {
-            window.location.href = '/mytransactions';
+            window.location.href='/mytransactions';
         }
     }
-
-
-    
-
 
     useEffect(() => {
         Auth();

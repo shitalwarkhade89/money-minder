@@ -19,7 +19,7 @@ type: String
 },
 category:{
    type:String,
-   enum:['food','entertainment','rent','travel','education','salary','other'],
+   enum:['food','entertainment','rent','travel','education','salary','other','shopping'],
    default: 'other'
 }
 },{
