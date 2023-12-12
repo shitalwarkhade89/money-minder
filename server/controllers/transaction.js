@@ -34,6 +34,41 @@ const postApiTransaction =
       }
    }
 
+
+   // post  transaction api v2
+   const postApiTransactionv2 =
+   async (req, res) => {
+
+      const { user,amount, type, category, description } = req.body;
+
+      const transaction = new Transaction({
+         user,
+         amount,
+         type,
+         category,
+         description
+      });
+      try {
+         const savedTransaction = await transaction.save();
+
+         return res.json({
+            success: true,
+            message: 'Transaction saved',
+            data: savedTransaction
+         });
+      }
+      catch (err) {
+         return responder({
+            res,
+            success: false,
+            message: err.message
+         });
+
+
+      }
+   }
+ 
+
 // get transactions
 const getApiTransaction =
    async (req, res) => {
@@ -123,4 +158,4 @@ const deleteUserTrandactionById = async (req,res) => {
    })
 }
 
-export { postApiTransaction, getApiTransaction, getApiTransactionById, getTransactionByUserId , updateTransactionById , deleteUserTrandactionById };
+export { postApiTransaction, getApiTransaction, getApiTransactionById, getTransactionByUserId , updateTransactionById , deleteUserTrandactionById ,postApiTransactionv2};

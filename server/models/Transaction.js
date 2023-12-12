@@ -7,7 +7,7 @@ const transactionSchema = new Schema({
   },
 amount: {
    type: Number,
-   requireed: true 
+   required: true 
 },
 type:{
    type:String,
@@ -19,7 +19,7 @@ type: String
 },
 category:{
    type:String,
-   enum:['food','entertainment','rent','travel','education','other'],
+   enum:['food','entertainment','rent','travel','education','salary','other'],
    default: 'other'
 }
 },{

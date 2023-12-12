@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 dotenv.config();
 import { getApiHealth } from './controllers/health.js';
-import{postApiTransaction ,getApiTransaction ,getApiTransactionById ,getTransactionByUserId , updateTransactionById ,deleteUserTrandactionById} from "./controllers/transaction.js";
+import{postApiTransaction ,getApiTransaction ,getApiTransactionById ,getTransactionByUserId , updateTransactionById ,deleteUserTrandactionById ,postApiTransactionv2} from "./controllers/transaction.js";
 import{postApiSingup ,postApiLogin} from "./controllers/user.js";
 const app = express();
 app.use(express.json());
@@ -19,6 +19,8 @@ connection();
 app.get('/api/health',getApiHealth );
 
 app.post('/api/v1/transactions',postApiTransaction );
+
+app.post('/api/v2/transactions',postApiTransactionv2);
 
 app.get('/api/v1/transactions',getApiTransaction);
 
