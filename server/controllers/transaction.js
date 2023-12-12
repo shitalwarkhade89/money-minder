@@ -111,5 +111,16 @@ const updateTransactionById = async (req, res) => {
    })
 }
 
+// delete user Transactions API
+const deleteUserTrandactionById = async (req,res) => {
+   const {id} =req.params;
+   const deleteTransaction = await Transaction.deleteOne({_id:id});
 
-export { postApiTransaction, getApiTransaction, getApiTransactionById, getTransactionByUserId , updateTransactionById };
+   res.json({
+      success:true,
+      data:deleteTransaction,
+      message:'Transaction delete'
+   })
+}
+
+export { postApiTransaction, getApiTransaction, getApiTransactionById, getTransactionByUserId , updateTransactionById , deleteUserTrandactionById };
