@@ -1,11 +1,21 @@
 .app{
     margin: 20px 100px;
 }
+.total-amount-cont{
+    width: 1100px;
+    display: flex;
+    justify-content: space-between;
+}
+.heading{
+    text-align: center;
+}
 
 .transaction-card{
     border: 1px solid #ccc;
     padding: 10px 10px;
-    margin: 10px;
+    width: 700px;
+    display: block;
+    margin: 10px auto;
     background-color: white;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
@@ -13,7 +23,8 @@
 
 }
 .transaction-amount{
-    padding: 10px 15px;
+    padding: 2px 10px;
+    font-size: 25px;
     font-weight: bold;
 }
 .credit-ammount{
@@ -25,5 +36,32 @@ color: red;
 .transaction-category{
     position: absolute;
     top:2px;
+    right: 80px;
+    font-size: 22px;
+
+}
+.edit-icon{
+    position: absolute;
+    top:3px;
     right: 5px;
+    height: 30px;
+    cursor: pointer;
+}
+.delete-icon{
+    position: absolute;
+    bottom:5px;
+    right: 5px;
+    height: 30px;
+    cursor: pointer; 
+}
+.description-div{
+    display: flex;
+   align-items: center;
+  
+
+
+}
+.transaction-description{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
