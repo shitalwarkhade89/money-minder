@@ -19,11 +19,13 @@ margin-top: -19px;
 }
 .description-bg{
     color: #ffff;
-    margin-left: 25px;
+    text-align: center;
+    padding: 100px 30px;
 }
 .feat-main-cont{
 display: flex;
 justify-content: space-around;
+flex-wrap: wrap;
     
 }
 .featur-card{

@@ -75,4 +75,36 @@ color: red;
     border-bottom: 2px solid black;
     border-radius: 10px;
 
+}    
+
+@media screen and (max-width: 768px) {
+    .transaction-card{
+        width: 350px;
+     
+    }
+    .total-amount-cont{
+        width: 400px;
+        font-size: 15px;
+    
+    }
+    .transactiontype{
+        background-color: #ffff;
+        padding: 3px 15px;
+        border-bottom: 2px solid black;
+        border-radius: 10px;
+        margin: 15px;
+    
+    }    
+    .description-div{
+        flex-direction: column;
+    }
+    .transaction-date{
+        bottom:38px;
+        right: 40px;
+        font-size: 20px;
+    }
+    .transaction-description{
+        font-size: 20px;
+    
+    }
 }
