@@ -64,14 +64,12 @@ function MyTransactions() {
       loadTransactions();
     }
   }
-  const updateTransaction = async (id) => {
-    window.location.href = `/api/transactions/${id}`
+  const updateTransaction = async(id) => {
+    window.location.href = `/update/${id}`
   }
 
   useEffect(() => {
     Auth();
-
-
   }, [])
   return (
     <>

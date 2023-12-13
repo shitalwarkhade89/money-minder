@@ -7,6 +7,7 @@ import Login from './views/Login/Login';
 import Singup from './views/Singup/Singup'
 import MyTransactions from './views/MyTransactions/MyTransactions';
 import AddTransaction from './views/AddTransaction/AddTransaction';
+import UpdateTransaction from './views/UpdateTransaction/UpdateTransaction';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -31,6 +32,11 @@ const router =createBrowserRouter([
 {
     path:'/login',
     element:<Login/>
+
+},
+{
+    path:'/update/:id',
+    element:<UpdateTransaction/>
 
 }
 ])
