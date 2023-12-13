@@ -24,11 +24,15 @@ function AddTransaction() {
             category: category
         })
 
+        console.log(response?.data?.data)
         // showToast(response?.data?.message,'success',3000);
-        alert(response?.data?.message);
-
+        
         if (response?.data?.success) {
-            window.location.href='/mytransactions';
+            alert(response?.data?.message);
+            window.location.href="/mytransactions";
+        }
+        else{
+            alert(response?.data?.message);
         }
     }
 
@@ -122,7 +126,7 @@ function AddTransaction() {
                         }}
                     />
                     <div className=" add-btn-cont">
-                        <button className="btn-add-transaction" onClick={addtransactions}>
+                        <button type="button" className="btn-add-transaction" onClick={addtransactions}>
                             Add Transaction
                         </button>
                     </div>

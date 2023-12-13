@@ -55,7 +55,7 @@ const singup =async()=>{
     const userId = JSON.parse(localStorage.getItem('user') || '{}');
     if(userId?.email){
         showToast("you are alrady singup !" ,'success', 3000);
-        window.location.href ='/login';
+        window.location.href ="/login";
     }
 },[])
 
