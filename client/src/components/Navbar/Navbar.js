@@ -14,7 +14,7 @@ function Navbar() {
     return (
         <>
             <div className='nav'>
-                <h2 className='app-name'>Mony-Minder 💰</h2>
+                <h2 className='app-name'>Money-Minder 💰</h2>
                 <div>
                     <Link to="/" className="navbar-links">Home</Link>
                     <Link to="/mytransactions" className="navbar-links">My Transactions</Link>
