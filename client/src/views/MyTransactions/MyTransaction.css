@@ -57,11 +57,22 @@ color: red;
 .description-div{
     display: flex;
    align-items: center;
+}
+.transaction-date{
+    position: absolute;
+    bottom:20px;
+    right: 80px;
+    font-size: 20px;
   
-
-
 }
 .transaction-description{
-    font-size: 20px;
+    font-size: 25px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.transactiontype{
+    background-color: #ffff;
+    padding: 5px 20px;
+    border-bottom: 2px solid black;
+    border-radius: 10px;
+
 }

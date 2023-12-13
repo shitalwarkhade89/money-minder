@@ -4,6 +4,7 @@
    margin: 40px auto;
    padding:  20px 50px;
    border-radius: 10px;
+   border-bottom: 5px solid black;
    box-shadow: 0 0 10px 0 rgb(84, 83, 83) ;
 }
 .login-btn{

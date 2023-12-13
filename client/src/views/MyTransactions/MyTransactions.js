@@ -11,7 +11,7 @@ function MyTransactions() {
   const [transactions, setTransactions] = useState();
   const [creditSum, setCreditSum] = useState(0);
   const [debitSum, setDebitSum] = useState(0);
-  // const [user, setUser] = useState({});
+  
 
   const CATEGORY_EMOJI_MAP = {
     "food": "🍔",
@@ -68,19 +68,6 @@ function MyTransactions() {
     window.location.href = `/api/transactions/${id}`
   }
 
-  // useEffect(() => {
-  //   const userstorageData = JSON.parse(localStorage.getItem('user') || '{}');
-
-  //   if (userstorageData?.email) {
-  //     setUser(userstorageData);
-  //   }
-  //   else {
-  //     showToast('you are not logged in!', 'danger', 1000);
-  //     window.location.href = '/login'
-  //   }
-
-  // }, [])
-
   useEffect(() => {
     Auth();
 
@@ -94,8 +81,8 @@ function MyTransactions() {
         <h1 className="heading">My Transactions</h1>
 
         <div className="total-amount-cont">
-          <h2> Credit : {creditSum}</h2>
-          <h2>Debit : {debitSum}</h2>
+          <h2 className="transactiontype"> Credit : {creditSum}</h2>
+          <h2 className="transactiontype">Debit : {debitSum}</h2>
         </div>
         {
           transactions?.map((transaction, index) => {
@@ -121,7 +108,7 @@ function MyTransactions() {
                   <hr />
                   <div className="description-div">
                     <p className="transaction-description">{description}</p>
-                    {type === "debit" ? "Debited" : "Credited"} on {date} at {time}
+                   <p className="transaction-date"> {type === "debit" ? "Debited" : "Credited"} on {date} at {time}</p>
 
                   </div>
                   <div>
