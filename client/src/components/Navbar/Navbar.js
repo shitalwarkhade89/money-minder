@@ -35,7 +35,7 @@ function Navbar() {
 
         </div>
         <div className={`user ${menuBtn}`}>
-        Hay!😊{userdata.name}
+        Hay! {userdata.name}
 
         {
           userdata?.name? (<button className='btn-logout'

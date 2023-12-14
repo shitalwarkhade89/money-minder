@@ -7,6 +7,9 @@
    border-bottom: 5px solid black;
    box-shadow: 0 0 10px 0 rgb(84, 83, 83) ;
 }
+.heading{
+    font-size: 30px;
+}
 .login-btn{
     font-size: 20px;
     display: block;
@@ -18,3 +21,18 @@
     border: none;
     cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+    .login-form{
+        width: 260px;
+    }
+    .input-box{
+        margin-top: 20px;
+    }
+    .heading{
+        font-size: 25px;
+    }
+  
+        
+}
+

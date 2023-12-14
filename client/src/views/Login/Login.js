@@ -40,7 +40,7 @@ function Login() {
             <Navbar />
             <div>
                 <form className="login-form">
-                    <h1 className="text-center">Money Minder</h1>
+                    <h6 className="heading">Money Minder</h6>
                     <div>
                         <label htmlFor="email" className="label">Email :- </label>
                         <input

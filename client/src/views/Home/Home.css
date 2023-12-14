@@ -43,8 +43,24 @@ flex-wrap: wrap;
     margin-top: 20px;
  
 }
+
 .featur-card-description{
     font-size: 20px;
     padding: 5px 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: justify;
+    font-family: Georgia, 'Times New Roman', 'Times, serif';
+}
+@media screen and (max-width: 768px) {
+    .featur-card{
+        flex-direction: column;
+        width: 290px;
+
+    }
+    .feature-img{
+        height: 150px;
+       padding: 5px;
+        display: block;
+        margin: 1px auto;
+
+}
 }
