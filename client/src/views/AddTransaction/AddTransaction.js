@@ -14,7 +14,7 @@ function AddTransaction() {
 
     const addtransactions = async () => {
         const userStorage = JSON.parse(localStorage.getItem('user'));
-        
+
 
         const response = await axios.post('/api/v2/transactions', {
             user: userStorage?._id,
@@ -26,12 +26,12 @@ function AddTransaction() {
 
         console.log(response?.data?.data)
         // showToast(response?.data?.message,'success',3000);
-        
+
         if (response?.data?.success) {
             alert(response?.data?.message);
-            window.location.href="/mytransactions";
+            window.location.href = "/mytransactions";
         }
-        else{
+        else {
             alert(response?.data?.message);
         }
     }
@@ -42,11 +42,11 @@ function AddTransaction() {
     return (
         <>
             <Navbar />
-           
+
             <div className="form-main-cont">
-            
+
                 <form className="form">
-                <h1 className="heading">Add Transactions</h1>
+                    <h1 className="heading">Add Transactions</h1>
                     <input
                         type="number"
                         placeholder="Enter amount"
@@ -56,38 +56,44 @@ function AddTransaction() {
                             setAmount(e.target.value)
                         }}
                     />
-                    <br/><br/>
+                    <br /><br />
 
                     <div>
                         <label htmlFor="type" className="label">Type :</label>
-                        <br/>
+                        <br />
                         <div className="radio-btn">
                             <div className="radio-btn-cont">
-                                <input
-                                    type="radio"
-                                    className="gender"
-                                    value="credit"
-                                    checked={type === "credit"}
-                                    onChange={(e) => {
-                                        if (e.target.checked) {
-                                            setType(e.target.value)
-                                        }
-                                    }}
-                                />
+                                
+                                <div>
+                                    <input
+                                        type="radio"
+                                        className="gender"
+                                        value="credit"
+                                        checked={type === "credit"}
+                                        onChange={(e) => {
+                                            if (e.target.checked) {
+                                                setType(e.target.value)
+                                            }
+                                        }}
+                                    />
+                                </div>
                                 <label className="label-credit">Credit</label>
 
-                                <input
-                                    type="radio"
-                                    className="gender"
-                                    value="debit"
-                                    checked={type === "debit"}
-                                    onChange={(e) => {
-                                        if (e.target.checked) {
-                                            setType(e.target.value)
-                                        }
-                                    }}
-                                />
+                                <div>
+                                    <input
+                                        type="radio"
+                                        className="gender"
+                                        value="debit"
+                                        checked={type === "debit"}
+                                        onChange={(e) => {
+                                            if (e.target.checked) {
+                                                setType(e.target.value)
+                                            }
+                                        }}
+                                    />
+                                </div>
                                 <label className="label-credit">Debit</label>
+
                             </div>
                         </div>
 
