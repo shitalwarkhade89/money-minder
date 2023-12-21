@@ -21,6 +21,8 @@ margin-top: -19px;
     color: #ffff;
     text-align: center;
     padding: 100px 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
 }
 .feat-main-cont{
 display: flex;
